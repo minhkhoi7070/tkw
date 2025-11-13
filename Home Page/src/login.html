@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập & Đăng ký - Sweetie Cake</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   
+    <link rel="stylesheet" href="/Home Page/css/HomePage.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    
+</head>
+<body class="loaded">
+
+<header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                    <img src="../img/logo.png" alt="Logo Sweetie Cake">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/entrement.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+<main class="py-5">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-6">
+                
+                <div class="card shadow-sm border-0 login-register-card" style="position: relative;">
+                    
+                    <div id="alert-container"></div>
+
+                    <div class="card-header">
+                        <ul class="nav nav-tabs nav-fill" id="myTab" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="login-tab" data-toggle="tab" href="#login" role="tab" aria-controls="login" aria-selected="true">Đăng nhập</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="register-tab" data-toggle="tab" href="#register" role="tab" aria-controls="register" aria-selected="false">Đăng ký</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="card-body p-4 p-md-5">
+                        <div class="tab-content" id="myTabContent">
+                            
+                            <div class="tab-pane fade show active" id="login" role="tabpanel" aria-labelledby="login-tab">
+                                <h5 class="text-center mb-4">Chào mừng trở lại!</h5>
+                                <form id="loginForm">
+                                    <div class="form-group">
+                                        <label for="loginEmail">Email</label>
+                                        <input type="email" class="form-control" id="loginEmail" placeholder="Nhập email của bạn" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="loginPassword">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="loginPassword" placeholder="Nhập mật khẩu" required>
+                                    </div>
+                                    <div class="d-flex justify-content-between align-items-center mb-3">
+                                        <div class="form-check">
+                                            <input type="checkbox" class="form-check-input" id="rememberMe">
+                                            <label class="form-check-label" for="rememberMe">Ghi nhớ tôi</label>
+                                        </div>
+                                        <a href="/Home Page/src/forgot-password.html" class="small">Quên mật khẩu?</a>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+                                </form>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="register" role="tabpanel" aria-labelledby="register-tab">
+                                <h5 class="text-center mb-4">Tạo tài khoản mới</h5>
+                                <form id="registerForm">
+                                    <div class="form-group">
+                                        <label for="registerName">Họ và tên</label>
+                                        <input type="text" class="form-control" id="registerName" placeholder="Nhập họ và tên" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerEmail">Email</label>
+                                        <input type="email" class="form-control" id="registerEmail" placeholder="Nhập email của bạn" required>
+                                        <div class="invalid-feedback d-none" id="emailError">
+                                            Email này đã được sử dụng!
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerPassword">Mật khẩu</label>
+                                        <input type="password" class="form-control" id="registerPassword" placeholder="Nhập mật khẩu" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="registerConfirmPassword">Xác nhận mật khẩu</label>
+                                        <input type="password" class="form-control" id="registerConfirmPassword" placeholder="Nhập lại mật khẩu" required>
+                                        <div class="invalid-feedback d-none" id="passwordError">
+                                            Mật khẩu không trùng khớp!
+                                        </div>
+                                    </div>
+                                    <button type="submit" class="btn btn-success btn-block">Đăng ký</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+    
+<div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+
+<script src="/scripts/global.js"></script> <script>
+    // --- LẤY CÁC PHẦN TỬ FORM ---
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+    
+    // Trường Đăng ký
+    const registerName = document.getElementById('registerName');
+    const registerEmail = document.getElementById('registerEmail');
+    const registerPassword = document.getElementById('registerPassword');
+    const registerConfirmPassword = document.getElementById('registerConfirmPassword');
+    
+    // Trường Đăng nhập
+    const loginEmail = document.getElementById('loginEmail');
+    const loginPassword = document.getElementById('loginPassword');
+
+    // Thông báo lỗi
+    const passwordError = document.getElementById('passwordError');
+    const emailError = document.getElementById('emailError');
+    
+    // Lấy Tab
+    const loginTabLink = document.getElementById('login-tab');
+    
+    const alertContainer = document.getElementById('alert-container');
+
+    // --- HÀM HIỂN THỊ THÔNG BÁO ---
+    function showAlert(message, type = 'success') {
+        const alertHTML = `
+            <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                ${message}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        `;
+        alertContainer.innerHTML = alertHTML;
+        setTimeout(() => {
+            const alertNode = alertContainer.querySelector('.alert');
+            if (alertNode) $(alertNode).alert('close');
+        }, 5000);
+    }
+
+    // --- HÀM HỖ TRỢ LOCALSTORAGE ---
+    // (File global.js đã có getCart/saveCart, ở đây ta cần get/save Users)
+    function getUsers() {
+        const users = localStorage.getItem('users');
+        return users ? JSON.parse(users) : [];
+    }
+    function saveUsers(usersArray) {
+        localStorage.setItem('users', JSON.stringify(usersArray));
+    }
+    function showError(inputElement, errorElement, message) {
+        errorElement.innerText = message;
+        errorElement.classList.remove('d-none');
+        errorElement.classList.add('d-block');
+        inputElement.classList.add('is-invalid');
+    }
+    function clearError(inputElement, errorElement) {
+        errorElement.classList.add('d-none');
+        errorElement.classList.remove('d-block');
+        inputElement.classList.remove('is-invalid');
+    }
+
+    // --- XỬ LÝ ĐĂNG KÝ (LƯU VÀO LOCALSTORAGE) ---
+    registerForm.addEventListener('submit', function(event) {
+        event.preventDefault(); 
+        
+        const name = registerName.value;
+        const email = registerEmail.value;
+        const password = registerPassword.value;
+        const confirmPassword = registerConfirmPassword.value;
+
+        clearError(registerConfirmPassword, passwordError);
+        clearError(registerEmail, emailError);
+
+        if (password !== confirmPassword) {
+            showError(registerConfirmPassword, passwordError, 'Mật khẩu không trùng khớp!');
+            return; 
+        }
+
+        const users = getUsers();
+        const existingUser = users.find(user => user.email === email);
+
+        if (existingUser) {
+            showError(registerEmail, emailError, 'Email này đã được sử dụng!');
+            return; 
+        }
+
+        // Thêm "totalSpent: 0" cho người dùng mới
+        const newUser = { name: name, email: email, password: password, totalSpent: 0 }; 
+        users.push(newUser);
+        saveUsers(users);
+
+        showAlert('Đăng ký thành công! Vui lòng đăng nhập.', 'success');
+        registerForm.reset(); 
+        $(loginTabLink).tab('show'); // Dùng jQuery để chuyển tab
+    });
+
+    // --- XỬ LÝ ĐĂNG NHẬP (LƯU `currentUser` VÀ CHUYỂN HƯỚNG) ---
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const email = loginEmail.value;
+        const password = loginPassword.value;
+        const users = getUsers();
+        const foundUser = users.find(user => user.email === email && user.password === password);
+
+        // --- XỬ LÝ ĐĂNG NHẬP (LƯU `currentUser` VÀ CHUYỂN HƯỚNG) ---
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const email = loginEmail.value;
+        const password = loginPassword.value;
+        const users = getUsers();
+
+        const foundUser = users.find(user => user.email === email && user.password === password);
+
+        // === (BẮT ĐẦU KHỐI CẬP NHẬT) ===
+        if (foundUser) {
+            // 1. Lưu người dùng hiện tại vào localStorage
+            localStorage.setItem('currentUser', JSON.stringify(foundUser));
+
+            // 2. Hiển thị thông báo
+            showAlert(`Chào mừng trở lại, ${foundUser.name}! Đang chuyển hướng...`, 'success');
+            
+            // 3. (MỚI) Kiểm tra xem có link "redirect" trên URL không
+            const urlParams = new URLSearchParams(window.location.search);
+            const redirectUrl = urlParams.get('redirect'); // Lấy giá trị của 'redirect'
+
+            // Mặc định, sẽ quay về trang chủ
+            let redirectTo = "/Home Page/src/HomePage.html"; // Sửa link trang chủ nếu cần
+            
+            if (redirectUrl) {
+                // Nếu có link (từ giỏ hàng), chúng ta sẽ dùng link đó
+                redirectTo = decodeURIComponent(redirectUrl);
+            }
+            
+            // 4. Chuyển hướng đến nơi cần đến (Trang chủ hoặc Giỏ hàng)
+            setTimeout(() => {
+                window.location.href = redirectTo; 
+            }, 1500);
+
+        } else {
+            // Đăng nhập thất bại
+            showAlert('Sai email hoặc mật khẩu. Vui lòng thử lại.', 'danger');
+        }
+        // === (KẾT THÚC KHỐI CẬP NHẬT) ===
+    });
+    });
+</script>
+    
+</body>
+</html>

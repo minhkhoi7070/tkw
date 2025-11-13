@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Bánh Mousse </title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="/Home Page/css/HomePage.css">
+    <style>
+   
+    body { 
+       font-family: sans-serif; 
+       background-color: #fcfcfc; 
+    }
+
+    /* KHUNG CHỨA CHUNG */
+    .product-section { 
+        padding: 40px 0; /* Bootstrap padding */
+    }
+
+
+    /* MÔ TẢ DANH MỤC */
+    .category-description {
+        max-width: 1200px;
+        margin: 40px auto 30px;
+        padding: 0 15px; /* Sửa thành 15px để căn lề Bootstrap */
+        color: #555;
+        line-height: 1.6;
+    }
+
+    /* ITEM SẢN PHẨM */
+    .product-item {
+        text-align: center;
+    }
+    .product-item a { 
+        text-decoration: none; 
+        color: inherit; 
+        display: block; 
+    }
+       
+        
+   .product-image { 
+        width: 100%; 
+        height: auto;
+        position: relative; 
+        overflow: hidden; 
+        margin-bottom: 15px; 
+        background-color: #f9f9f9;
+    }
+    .product-image img { 
+            
+        width: 100%; 
+        height:auto; 
+        object-fit: cover; 
+        display: block;
+        margin: 0 auto;
+        transition: transform 0.3s ease;
+    }
+       
+    .product-title { 
+        font-size: 1em; 
+        font-weight: 700; 
+        color:#212529; 
+        margin: 5px 0; 
+        min-height: 40px; 
+    }
+    .product-price { 
+        font-size: 1.1em; 
+        font-weight: bold; 
+        color: #a04000; 
+        margin-top: 10px; 
+            
+    }
+       
+    /* KHUNG CHỨA CHUNG */
+    .product-section { 
+        padding: 40px 0; /* Bootstrap padding */
+    }
+
+
+    /* MÔ TẢ DANH MỤC */
+    .category-description {
+        max-width: 1200px;
+        margin: 0 auto 30px;
+        padding: 0 15px; /* Sửa thành 15px để căn lề Bootstrap */
+        color: #555;
+        line-height: 1.6;
+    }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />  
+<script src="/JavaScript/global.js"></script>
+</head>
+<body>
+<header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                     <img src="../img/logo.png" alt="Logo Sweetie Cake">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/entrement.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<div class="category-description container">
+   <p>Tại Sweetie Cake, Mousse không chỉ là dòng bánh bán chạy nhất mà còn là dòng bánh gắn liền với thương hiệu từ những ngày đầu ra mắt trên thị trường.Khi khách hành nhắc đến bánh mousse thì nhớ đến Sweetie Cake.</p>
+   <p>Bánh mousse là dòng bánh có đa dạng mẫu bánh với hương vị của Sweetie Cake.Mỗi mẫu bánh đều được làm theo công thức độc quyền để tạo ra chiếc bánh vừa ngon vừa đẹp và đặc biệt phù hợp với đại đa số khẩu vị người dùng.</p>
+   <p>Đặc biệt, dòng bánh Mousse có phần trang trí từ trái cây tươi cao cấp theo mùa để giúp khách thưởng thức được sự tươi ngon, chuẩn vị.</p>
+   
+</div>
+
+<section class="product-section container">
+   
+    <div class="row">
+        
+        <div class="col-6 col-md-3 col-lg-3 mb-4">
+            <div class="product-item">
+                    <div class="product-image"><a href="./banh11.html"><img src="../img/anh11.jpg" alt="mousse"></a></div>
+                    <h3 class="product-title"><a href="./banh11.html">Green Bliss – Mousse Bơ</a></h3>
+                    <p class="product-price">535.000 ₫</p>
+            </div>
+        </div>
+        
+        <div class="col-6 col-md-3 col-lg-3 mb-4">
+            <div class="product-item">
+                    <div class="product-image"><a href="./banh12.html"><img src="../img/anh12.jpg" alt="mousse"></a></div>
+                    <h3 class="product-title"><a href="./banh12.html">Tiralychée – Tiramisu Vải Mây</a></h3>
+                    <p class="product-price">625.000 ₫</p>
+            </div>
+        </div>
+        
+        <div class="col-6 col-md-3 col-lg-3 mb-4">
+            <div class="product-item">
+                    <div class="product-image"><a href="./banh13.html"><img src="../img/anh13.jpg" alt="mousse"></a></div>
+                    <h3 class="product-title"><a href="./banh13.html">Tropical Aura – Mousse Bưởi Đỏ Thanh Trà</a></h3>
+                    <p class="product-price">585.000 ₫</p>
+            </div>
+        </div>
+        
+        <div class="col-6 col-md-3 col-lg-3 mb-4">
+            <div class="product-item">
+                    <div class="product-image"><a href="./banh14.html"><img src="../img/anh14.jpg" alt="mousse"></a></div>
+                    <h3 class="product-title"><a href="./banh14.html">Tropical Green – Mousse Mãng Cầu Dâu Tây</a></h3>
+                    <p class="product-price">625.000 ₫</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+    <script src="script.js"></script>
+
+   
+ 
+</body>
+</html>

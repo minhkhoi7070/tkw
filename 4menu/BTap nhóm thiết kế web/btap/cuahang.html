@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweetie Cake - Hệ Thống Cửa Hàng</title>
+
+    <link rel="stylesheet" href="/Home Page/css/HomePage.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    
+    <style>
+       
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f8f9fa; 
+            color: #88929c; 
+          
+        }
+
+        /* Tiêu đề chính */
+        .display-4 {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #fd7e14, #ffc107);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .lead {
+            color: #6c757d;
+            font-size: 1.15rem;
+        }
+
+        /* Section chung */
+        .store-section { 
+            padding: 60px 0; 
+        }
+
+        /* Thẻ (Card) */
+        .card {
+            border-radius: 10px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+            border: none; 
+            height: 100%; 
+        }
+        
+        
+         
+        
+        .store-list .list-group-item-action {
+            border: none;
+            border-bottom: 1px solid #f0f0f0; /* Viền mỏng hơn */
+            padding: 1.25rem; /* Tăng padding cho thoáng */
+            transition: background-color 0.2s ease-out; /* Hiệu ứng mượt */
+            cursor: pointer;
+        }
+        .store-list .list-group-item-action:last-child {
+            border-bottom: none;
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+        .store-list .list-group-item-action:first-child {
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+        
+        /* 1. Trạng thái HOVER (Rê chuột vào) */
+        .store-list .list-group-item-action:hover {
+            background-color: #e9ecef; /* Màu nền xám nhạt khi hover */
+        }
+        
+        /* 2. Trạng thái ACTIVE (Đang được chọn) */
+        .store-list .list-group-item-action.active {
+            background-color: #cdaf83;
+            color: #fff;
+            border-color: #537294;
+            box-shadow: 0 2px 8px rgba(65, 86, 109, 0.4);
+            transform: scale(1.02); /* Phóng to nhẹ khi active */
+            z-index: 10;
+            position: relative;
+        }
+
+    
+        /* Đảm bảo toàn bộ chữ đổi màu khi active */
+        .store-list .list-group-item-action.active .store-list-header,
+        .store-list .list-group-item-action.active p,
+        .store-list .list-group-item-action.active small {
+            color: #ffffff; /* Đổi tất cả chữ sang màu trắng */
+        }
+
+        .store-list-header {
+            font-size: 1.15rem; /* To hơn chút */
+            font-weight: 600;
+            color: #343a40;
+            margin-bottom: 0.3rem; /* Giảm khoảng cách */
+        }
+        
+        .store-list p {
+            font-size: 0.95rem;
+            color: #495057;
+        }
+        .store-list small {
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* Iframe bản đồ */
+        #store-map-iframe {
+            width: 100%;
+            height: 500px; 
+            border: 0;
+            border-radius: 8px; 
+        }
+        
+        /* Card dịch vụ */
+        .service-card .list-group-item {
+            border: none;
+            font-size: 1rem;
+        }
+        .service-card .list-group-item i {
+            width: 30px;
+            color: #007bff;
+        }
+        .text-muted{
+            color:white;
+        }
+    </style>
+ <script src="/JavaScript/global.js"></script>
+</head>
+<body>
+<header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                    <img src="../btap/img/logo.png" alt="Logo Sweetie Cake">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/banh9.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<section class="store-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+              
+                <p class="lead text-muted">Quý khách có thể đến trực tiếp để thưởng thức bánh hoặc đặt hàng mang đi tại các chi nhánh sau:</p>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="card shadow-sm store-list">
+                    <div class="card-header bg-white font-weight-bold">
+                        <i class="fas fa-store-alt text-primary"></i> Danh sách chi nhánh
+                    </div>
+                    <div class="list-group list-group-flush" id="store-list">
+                        
+                        <a href="javascript:void(0)" 
+                           class="list-group-item list-group-item-action active" 
+                           onclick="changeMap(this)" 
+                           data-map-src="https://maps.google.com/maps?q=140+Lê+Trọng+Tấn,+phường+Tây+Thạnh,+Quận+Tân+Phú,+TP.HCM&t=&z=17&ie=UTF8&iwloc=&output=embed">
+                            <div>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1 store-list-header">1. Cửa hàng chính</h5>
+                                    <small><i class="fas fa-star text-warning"></i></small>
+                                </div>
+                                <p class="mb-1">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                                <small class="text-muted">Hotline: 028.8888.3388</small>
+                            </div>
+                        </a>
+                        
+                        <a href="javascript:void(0)" 
+                           class="list-group-item list-group-item-action" 
+                           onclick="changeMap(this)" 
+                           data-map-src="https://maps.google.com/maps?q=93+Tân+Kỳ+Tân+Quý,+phường+Tân+Sơn+Nhì,+Quận+Tân+Phú,+TP.HCM&t=&z=17&ie=UTF8&iwloc=&output=embed">
+                            <div>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1 store-list-header">2. Chi nhánh 93 Tân Kỳ Tân Quý</h5>
+                                </div>
+                                <p class="mb-1">93 Tân Kỳ Tân Quý, phường Tân Sơn Nhì, Quận Tân Phú, TP.HCM</p> 
+                                <small class="text-muted">Điện thoại: 028.8866.1122</small>
+                            </div>
+                        </a>
+
+                        <a href="javascript:void(0)" 
+                           class="list-group-item list-group-item-action" 
+                           onclick="changeMap(this)" 
+                           data-map-src="https://maps.google.com/maps?q=31+Chế+Lan+Viên,+phường+Tây+Thạnh,+Quận+Tân+Phú,+TP.HCM&t=&z=17&ie=UTF8&iwloc=&output=embed">
+                            <div>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1 store-list-header">3. Chi nhánh 31 Chế Lan Viên</h5>
+                                </div>
+                                <p class="mb-1">31 Chế Lan Viên, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                                <small class="text-muted">Điện thoại: 028.8877.2233</small>
+                            </div>
+                        </a>
+
+                        <a href="javascript:void(0)" 
+                           class="list-group-item list-group-item-action" 
+                           onclick="changeMap(this)" 
+                           data-map-src="https://maps.google.com/maps?q=73/1+Nguyễn+Đỗ+Cung,+phường+Tây+Thạnh,+Quận+Tân+Phú,+TP.HCM&t=&z=17&ie=UTF8&iwloc=&output=embed">
+                            <div>
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1 store-list-header">4. Chi nhánh 73/1 Nguyễn Đỗ Cung</h5>
+                                </div>
+                                <p class="mb-1">73/1 Nguyễn Đỗ Cung, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                                <small class="text-muted" >Điện thoại: 028.8899.5566</small>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body p-2">
+                        <iframe id="store-map-iframe"
+                            src="https://maps.google.com/maps?q=2A%20Ba%20Gia%2C%20Ph%C6%B0%E1%BB%9Dng%207%2C%20Qu%E1%BA%ADn%20T%C3%A2n%20B%C3%ACnh&t=&z=17&ie=UTF8&iwloc=&output=embed"
+                            frameborder="0" 
+                            scrolling="no" 
+                            marginheight="0" 
+                            marginwidth="0"
+                            allowfullscreen="" 
+                            loading="lazy">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+
+        </div> <div class="row mt-5">
+            <div class="col-12">
+                <div class="card shadow-sm service-card">
+                    <div class="card-header bg-white font-weight-bold">
+                        <i class="fas fa-concierge-bell text-primary"></i> Dịch vụ tại cửa hàng
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">
+                                <i class="fas fa-birthday-cake"></i> Nhận đặt bánh sinh nhật, bánh tiệc theo yêu cầu.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-coffee"></i> Có khu vực thưởng thức tại chỗ, không gian thoải mái.
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-motorcycle"></i> Nhận giao hàng tận nơi thông qua Grab/ ShopeeFood / Giao Hàng Nhanh.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    
+    function changeMap(element) {
+        // 1. Lấy link bản đồ mới từ thuộc tính 'data-map-src'
+        const mapSrc = element.getAttribute('data-map-src');
+        
+        // 2. Tìm iframe bản đồ và cập nhật 'src'
+        const iframe = document.getElementById('store-map-iframe');
+        iframe.src = mapSrc;
+        
+        // 3. Xóa class 'active' khỏi tất cả các mục trong danh sách
+        const storeList = document.getElementById('store-list');
+        const items = storeList.getElementsByClassName('list-group-item-action');
+        for (let i = 0; i < items.length; i++) {
+            items[i].classList.remove('active');
+        }
+        
+        // 4. Thêm class 'active' vào mục vừa được click
+        element.classList.add('active');
+    }
+
+    // Script fade-in khi tải trang
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('loaded');
+    });
+</script>
+</body>
+</html>

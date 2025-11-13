@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale-1.0">
+    <title>Sweetie Cake - Liên Hệ</title>
+
+    <link rel="stylesheet" href="/Home Page/css/HomePage.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    
+    <style>
+        /* CSS CHUNG CHO BODY VÀ NỘI DUNG */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f8f9fa; 
+            color: #343a40; 
+           
+        }
+
+        /* Tiêu đề chính */  
+        .display-4 {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #28a745, #20c997); 
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .lead {
+            color: #6c757d;
+            font-size: 1.15rem;
+        }
+
+        /* Section chung */
+        .contact-section { 
+            padding: 60px 0; 
+        }
+
+        /* Thẻ (Card) */
+        .card {
+            border-radius: 10px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+            border: none; 
+            height: 100%; 
+        }
+        
+        
+        
+        .card-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eee;
+            border-radius: 10px 10px 0 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007bff; 
+        }
+        .card-header i {
+            margin-right: 10px;
+        }
+
+        /* Tùy chỉnh danh sách thông tin */
+        .info-list .list-group-item {
+            border: none;
+            padding: 1rem 0;
+            font-size: 1rem;
+            color: #343a40;
+            display: flex;
+            align-items: flex-start;
+        }
+        .info-list .list-group-item i {
+            width: 30px; /* Căn lề icon */
+            margin-right: 15px;
+            margin-top: 5px;
+            text-align: center;
+            color: #007bff;
+        }
+        .info-list .list-group-item strong {
+            color: #343a40;
+            display: block;
+            margin-bottom: 2px;
+        }
+        
+        /* Nút mạng xã hội (căn lề icon) */
+        .social-btn i {
+            margin-right: 10px; /* Thêm khoảng cách cho icon FA */
+        }
+        .social-btn img {
+            width: 20px; /* Kích thước logo Zalo */
+            height: 20px;
+            margin-right: 8px; /* Căn lề logo Zalo */
+            vertical-align: middle; /* Căn giữa logo Zalo */
+        }
+
+        /* Nút Gửi */
+        .btn-success {
+            background-color: #3f6b3e;
+            border-color: #3f6b3e;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .btn-success:hover {
+            background-color: #315230;
+            border-color: #315230;
+        }
+
+    </style>
+<script src="/JavaScript/global.js"></script>
+</head>
+<body>
+<header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                    <img src="../btap/img/logo.png" alt="Logo Sweetie Cake">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/entrement.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<section class="contact-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+               
+                <p class="lead text-muted">Nếu bạn có thắc mắc, góp ý hoặc cần hỗ trợ, vui lòng liên hệ với chúng tôi qua các kênh sau:</p>
+            </div>
+        </div>
+
+        <div class="row">
+            
+            <div class="col-lg-5 mb-4 mb-lg-0">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header">
+                        <i class="fas fa-info-circle"></i> 1. Thông tin liên hệ
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush info-list">
+                            <li class="list-group-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div>
+                                    <strong>Địa chỉ:</strong>
+                                    <span>140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-phone-alt"></i>
+                                <div>
+                                    <strong>Hotline:</strong>
+                                    <span>028.8888.3388</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-envelope"></i>
+                                <div>
+                                    <strong>Email:</strong>
+                                    <span>sweetiecake@gmail.com</span>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <i class="fas fa-clock"></i>
+                                <div>
+                                    <strong>Giờ làm việc:</strong>
+                                    <span>8:00 - 21:00 (Tất cả các ngày trong tuần)</span>
+                                </div>
+                            </li>
+                        </ul>
+                        
+                        <hr class="my-4">
+
+                        <h5 class="card-title" style="color: #007bff;"><i class="fas fa-share-alt"></i> 3. Mạng xã hội</h5>
+                        <p class="text-secondary">Theo dõi chúng tôi trên các kênh:</p>
+                        
+                        <a href="https://facebook.com/cailonuong" class="btn btn-outline-primary btn-block social-btn text-left" target="_blank">
+                            <i class="fab fa-facebook-square fa-lg"></i> Facebook
+                        </a>
+                        <a href="https://instagram.com/cailonuong" class="btn btn-outline-danger btn-block social-btn text-left mt-2" target="_blank">
+                            <i class="fab fa-instagram fa-lg"></i> Instagram
+                        </a>
+                        
+                        <a href="https://zalo.me/02888883388" class="btn btn-outline-info btn-block social-btn text-left mt-2" target="_blank">
+                            <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo">
+                            Zalo
+                        </a>
+                        </div>
+                </div>
+            </div>
+
+            <div class="col-lg-7">
+                <div class="card shadow-sm h-100">
+                    <div class="card-header">
+                        <i class="fas fa-paper-plane"></i> 2. Liên hệ trực tuyến
+                    </div>
+                    <div class="card-body">
+                        <form action="#" method="post">
+                            <div class="form-group">
+                                <label for="hoten">Họ và tên:</label>
+                                <input type="text" class="form-control" id="hoten" name="hoten" placeholder="Nhập họ và tên" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">Email:</label>
+                                <input type="email" class="form-control" id="email" name="email" placeholder="Nhập email của bạn" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="noidung">Nội dung:</label>
+                                <textarea class="form-control" id="noidung" name="noidung" rows="8" placeholder="Nhập nội dung liên hệ..." required></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-success btn-lg btn-block">Gửi liên hệ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fade-in effect for the body on load
+        document.body.classList.add('loaded');
+    });
+</script>
+</body>
+</html>

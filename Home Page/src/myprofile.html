@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản của tôi - Sweetie Cake</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <link rel="stylesheet" href="/Home Page/css/HomePage.css">
+
+    
+</head>
+<body class="loaded">
+
+<header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                   <img src="../img/logo.png" alt="Logo Sweetie Cake">  
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/entrement.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+<main class="py-5">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-3">
+                <div class="card profile-card profile-sidebar">
+                    <div class="card-body p-3">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                            <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">
+                                <i class="fas fa-user-circle mr-2"></i>Thông tin cá nhân
+                            </a>
+                            <a class="nav-link" id="v-pills-password-tab" data-toggle="pill" href="#v-pills-password" role="tab" aria-controls="v-pills-password" aria-selected="false">
+                                <i class="fas fa-key mr-2"></i>Đổi mật khẩu
+                            </a>
+                            <a class="nav-link" id="v-pills-membership-tab" data-toggle="pill" href="#v-pills-membership" role="tab" aria-controls="v-pills-membership" aria-selected="false">
+                                <i class="fas fa-star mr-2"></i>Hạng thành viên
+                            </a>
+                            <a class="nav-link" id="v-pills-orders-tab" data-toggle="pill" href="#v-pills-orders" role="tab" aria-controls="v-pills-orders" aria-selected="false">
+                                <i class="fas fa-receipt mr-2"></i>Lịch sử đơn hàng
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="col-lg-9">
+                <div class="card profile-card">
+                    <div class="card-body p-4 p-md-5">
+                        
+                        <div id="alert-container"></div>
+
+                        <div class="tab-content" id="v-pills-tabContent">
+                            
+                            <div class="tab-pane fade show active" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                <h3>Thông tin cá nhân</h3>
+                                <p class="text-muted">Quản lý thông tin cá nhân của bạn.</p>
+                                <hr>
+                                <form id="profileForm">
+                                    <div class="form-group">
+                                        <label for="profileName">Họ và tên</label>
+                                        <input type="text" class="form-control" id="profileName" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="profileEmail">Email</label>
+                                        <input type="email" class="form-control" id="profileEmail" disabled>
+                                        <small class="form-text text-muted">Không thể thay đổi email.</small>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Lưu thay đổi</button>
+                                </form>
+                            </div>
+                            
+                            <div class="tab-pane fade" id="v-pills-password" role="tabpanel" aria-labelledby="v-pills-password-tab">
+                                <h3>Đổi mật khẩu</h3>
+                                <p class="text-muted">Để bảo mật, hãy thay đổi mật khẩu thường xuyên.</p>
+                                <hr>
+                                <form id="passwordForm">
+                                    <div class="form-group">
+                                        <label for="oldPassword">Mật khẩu cũ</label>
+                                        <input type="password" class="form-control" id="oldPassword" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="newPassword">Mật khẩu mới</label>
+                                        <input type="password" class="form-control" id="newPassword" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="confirmNewPassword">Xác nhận mật khẩu mới</label>
+                                        <input type="password" class="form-control" id="confirmNewPassword" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Đổi mật khẩu</button>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-membership" role="tabpanel" aria-labelledby="v-pills-membership-tab">
+                                <h3>Hạng thành viên</h3>
+                                <p class="text-muted">Chi tiêu nhiều hơn để nâng hạng và nhận ưu đãi.</p>
+                                <hr>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <div class="card bg-light text-center p-3">
+                                            <h5>Hạng hiện tại</h5>
+                                            <h3 class="text-primary mb-0" id="membership-tier">...</h3>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="card bg-light text-center p-3">
+                                            <h5>Tổng chi tiêu</h5>
+                                            <h3 class="text-success mb-0" id="membership-spent">...</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <h5>Tiến trình nâng hạng</h5>
+                                    <p class="text-muted" id="membership-progress-text">...</p>
+                                    <div class="progress" style="height: 20px;">
+                                        <div id="membership-progress-bar" class="progress-bar bg-warning" role="progressbar" style="width: 0%;" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="tab-pane fade" id="v-pills-orders" role="tabpanel" aria-labelledby="v-pills-orders-tab">
+    <h3>Lịch sử đơn hàng</h3>
+    <p class="text-muted">Theo dõi các đơn hàng bạn đã đặt.</p>
+    <hr>
+
+    <div id="order-history-container">
+        </div>
+
+    <div id="orders-empty-state" class="text-center p-5" style="display: none;">
+        <i class="fas fa-shopping-basket fa-3x text-muted mb-3"></i>
+        <h5>Bạn chưa có đơn hàng nào.</h5>
+        <p class="text-muted">Hãy bắt đầu mua sắm!</p>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+   
+<div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+
+<script src="/JavaScript/global.js"></script>
+
+<script>
+    // Định nghĩa các hạng thành viên
+    const TIERS = {
+        MEMBER: { name: 'Member', min: 800000 },
+        SILVER: { name: 'VIP Silver', min: 1500000 },
+        GOLD: { name: 'VIP Gold', min: 2500000 },
+        DIAMOND: { name: 'VIP Diamond', min: 5000000 }
+    };
+
+    // Hàm định dạng tiền
+    function formatVND(amount) {
+        if (typeof amount !== 'number') amount = 0;
+        return amount.toLocaleString('vi-VN') + ' đ';
+    }
+
+    // Hàm hiển thị thông báo
+    function showAlert(message, type = 'success') {
+        const alertContainer = document.getElementById('alert-container');
+        const alertHTML = `
+            <div class="alert alert-${type} alert-dismissible fade show" role="alert">
+                ${message}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+        `;
+        alertContainer.innerHTML = alertHTML;
+        setTimeout(() => {
+            const alertNode = alertContainer.querySelector('.alert');
+            if (alertNode) $(alertNode).alert('close');
+        }, 3000); // 3 giây
+    }
+    
+    // Hàm tải dữ liệu người dùng
+    function loadProfileData(currentUser) {
+        // 1. Điền thông tin cá nhân
+        document.getElementById('profileName').value = currentUser.name;
+        document.getElementById('profileEmail').value = currentUser.email;
+
+        // 2. Điền thông tin hạng thành viên
+        let totalSpent = currentUser.totalSpent || 0;
+        let currentTier = { name: 'Thành viên mới', min: 0 };
+        let nextTier = TIERS.MEMBER;
+        
+        if (totalSpent >= TIERS.DIAMOND.min) {
+            currentTier = TIERS.DIAMOND;
+            nextTier = TIERS.DIAMOND;
+        } else if (totalSpent >= TIERS.GOLD.min) {
+            currentTier = TIERS.GOLD;
+            nextTier = TIERS.DIAMOND;
+        } else if (totalSpent >= TIERS.SILVER.min) {
+            currentTier = TIERS.SILVER;
+            nextTier = TIERS.GOLD;
+        } else if (totalSpent >= TIERS.MEMBER.min) {
+            currentTier = TIERS.MEMBER;
+            nextTier = TIERS.SILVER;
+        }
+
+        document.getElementById('membership-tier').innerText = currentTier.name;
+        document.getElementById('membership-spent').innerText = formatVND(totalSpent);
+
+        // 3. Tính toán thanh tiến trình
+        let progressPercent = 0;
+        let progressText = '';
+
+        if (currentTier.name === TIERS.DIAMOND.name) {
+            progressPercent = 100;
+            progressText = 'Bạn đã đạt hạng cao nhất. Xin cảm ơn!';
+        } else {
+            // Xử lý trường hợp từ 0 lên Member
+            let startMin = currentTier.min;
+            let endMin = nextTier.min;
+            let spentInThisTier = totalSpent - startMin;
+            let neededForNextTier = endMin - startMin;
+            
+            progressPercent = (spentInThisTier / neededForNextTier) * 100;
+            progressText = `Bạn cần chi tiêu thêm ${formatVND(endMin - totalSpent)} để đạt hạng ${nextTier.name}.`;
+        }
+        
+        document.getElementById('membership-progress-bar').style.width = `${progressPercent}%`;
+        document.getElementById('membership-progress-bar').setAttribute('aria-valuenow', progressPercent);
+        document.getElementById('membership-progress-text').innerText = progressText;
+    }
+
+    // === (SỬA LỖI) HÀM NÀY PHẢI NẰM BÊN NGOÀI loadProfileData ===
+   // Hàm tải lịch sử đơn hàng (Đã sửa để thêm hình ảnh)
+    function loadOrderHistory(currentUser) {
+        const container = document.getElementById('order-history-container');
+        const emptyState = document.getElementById('orders-empty-state');
+        container.innerHTML = ''; // Xóa nội dung cũ
+
+        const allOrders = JSON.parse(localStorage.getItem('orderHistory')) || [];
+        
+        // Lọc ra chỉ những đơn hàng của user này
+        const myOrders = allOrders.filter(order => order.userEmail === currentUser.email);
+
+        if (myOrders.length === 0) {
+            emptyState.style.display = 'block';
+        } else {
+            emptyState.style.display = 'none';
+            myOrders.reverse(); // Đơn hàng mới nhất lên trên
+            
+            myOrders.forEach(order => {
+                const orderCardHTML = `
+                    <div class="card mb-3">
+                        <div class="card-header d-flex flex-wrap justify-content-between">
+                            <div>
+                                <strong>Mã đơn: ${order.orderId}</strong>
+                            </div>
+                            <div>
+                                Ngày đặt: ${order.date}
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <table class="table table-sm table-borderless">
+                                <tbody>
+                                    ${order.items.map(item => `
+                                        <tr>
+                                            <td style="width: 80px; vertical-align: middle;">
+                                                <img src="${item.image}" 
+                                                     alt="${item.name}" 
+                                                     class="img-fluid rounded" 
+                                                     style="width: 70px; height: 70px; object-fit: cover; 
+                                                            /* Style cho alt text nếu ảnh hỏng: */
+                                                            font-size: 10px; 
+                                                            color: #aaa; 
+                                                            overflow: hidden;">
+                                            </td>
+                                            
+                                            <td style="vertical-align: middle;">
+                                                ${item.name} <br>
+                                                <small class="text-muted">Số lượng: x${item.quantity}</small>
+                                            </td>
+                                            
+                                            <td class="text-right align-middle">${formatVND(item.price * item.quantity)}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                            <hr>
+                            <h5 class="text-right">Tổng cộng: <span class="text-danger font-weight-bold">${formatVND(order.total)}</span></h5>
+                        </div>
+                    </div>
+                `;
+                container.innerHTML += orderCardHTML;
+            });
+        }
+    }
+    
+    // --- CHẠY KHI TẢI TRANG ---
+    document.addEventListener('DOMContentLoaded', function() {
+        const currentUserJSON = localStorage.getItem('currentUser');
+        
+        // **BẢO VỆ TRANG**: Nếu chưa đăng nhập, đá về trang login
+        if (!currentUserJSON) {
+            alert('Vui lòng đăng nhập để xem trang này.');
+            window.location.href = '/login.html'; // Sửa link trang login nếu cần
+            return;
+        }
+
+        const currentUser = JSON.parse(currentUserJSON);
+        
+        // Gọi cả 2 hàm (bây giờ chúng đã ngang cấp nhau)
+        loadProfileData(currentUser);
+        loadOrderHistory(currentUser);
+
+        // Xử lý Form Thông tin cá nhân
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let newName = document.getElementById('profileName').value;
+            
+            // 1. Cập nhật currentUser
+            currentUser.name = newName;
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            
+            // 2. Cập nhật mảng 'users'
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            let userIndex = users.findIndex(u => u.email === currentUser.email);
+            if (userIndex > -1) {
+                users[userIndex].name = newName;
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+            
+            // 3. Cập nhật header và thông báo
+            document.getElementById('welcome-message').innerText = 'Chào, ' + newName;
+            showAlert('Cập nhật thông tin thành công!', 'success');
+        });
+
+        // Xử lý Form Đổi mật khẩu
+        document.getElementById('passwordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            let oldPass = document.getElementById('oldPassword').value;
+            let newPass = document.getElementById('newPassword').value;
+            let confirmPass = document.getElementById('confirmNewPassword').value;
+
+            if (oldPass !== currentUser.password) {
+                showAlert('Mật khẩu cũ không chính xác!', 'danger');
+                return;
+            }
+            if (newPass !== confirmPass) {
+                showAlert('Mật khẩu mới không trùng khớp!', 'danger');
+                return;
+            }
+            
+            // 1. Cập nhật currentUser
+            currentUser.password = newPass;
+            localStorage.setItem('currentUser', JSON.stringify(currentUser));
+            
+            // 2. Cập nhật mảng 'users'
+            let users = JSON.parse(localStorage.getItem('users')) || [];
+            let userIndex = users.findIndex(u => u.email === currentUser.email);
+            if (userIndex > -1) {
+                users[userIndex].password = newPass;
+                localStorage.setItem('users', JSON.stringify(users));
+            }
+            
+            showAlert('Đổi mật khẩu thành công!', 'success');
+            document.getElementById('passwordForm').reset();
+        });
+    });
+</script>
+</body>
+</html>

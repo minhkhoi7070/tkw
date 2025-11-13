@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sweetie Cake - Chính Sách Giao Hàng</title>
+
+    <link rel="stylesheet" href="/Home Page/css/HomePage.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    
+    <style>
+        /* CSS CHUNG CHO BODY VÀ NỘI DUNG */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f8f9fa; 
+            color: #343a40; 
+           
+        }
+        
+
+        /* Tiêu đề chính */
+        .display-4 {
+            font-size: 3.5rem;
+            background: linear-gradient(45deg, #007bff, #17a2b8); /* Gradient màu mát */
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .lead {
+            color: #6c757d;
+            font-size: 1.15rem;
+        }
+
+        /* Section chung */
+        .policy-section { 
+            padding: 60px 0; 
+        }
+
+        /* Thẻ (Card) */
+        .card {
+            border-radius: 10px; 
+            transition: transform 0.3s ease, box-shadow 0.3s ease; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08); 
+            border: none; /* Bỏ viền mặc định */
+            height: 100%; /* Giúp các thẻ trong 1 hàng cao bằng nhau */
+        }
+        .card:hover {
+            transform: translateY(-5px); 
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15); 
+        }
+        
+        .card-header {
+            background-color: #ffffff;
+            border-bottom: 1px solid #eee;
+            border-radius: 10px 10px 0 0;
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007bff; /* Màu chữ header của thẻ */
+        }
+        .card-header i {
+            margin-right: 10px;
+        }
+
+        /* Danh sách trong thẻ */
+        .list-group-item {
+            border: none;
+            padding: 12px 0;
+            font-size: 0.95rem;
+            color: #495057;
+        }
+        .list-group-item strong {
+            color: #dc3545; /* Màu đỏ cho phần text strong */
+        }
+        
+        /* Phần liên hệ hỗ trợ */
+        .support-card .list-group-item {
+            font-weight: 500;
+        }
+        .support-card i {
+            width: 20px;
+            margin-right: 8px;
+            text-align: center;
+        }
+
+    </style>
+<script src="/JavaScript/global.js"></script>
+</head>
+<body>
+<header>
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                    <img src="../btap/img/logo.png" alt="Logo Sweetie Cake">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/entrement.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+<section class="policy-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center mb-5">
+              
+                <p class="lead text-muted">Chúng tôi luôn mong muốn mang đến trải nghiệm tốt nhất cho khách hàng, vì vậy chúng tôi cung cấp dịch vụ giao hàng nhanh chóng và tiện lợi.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <i class="fas fa-map-marker-alt"></i> 1. Phạm vi giao hàng
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Giao hàng trong nội thành TP.HCM và một số khu vực lân cận.</li>
+                            <li class="list-group-item">Các khu vực xa trung tâm có thể phát sinh thêm phụ phí vận chuyển tùy theo khoảng cách.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <i class="fas fa-shipping-fast"></i> 2. Thời gian giao hàng
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Đơn hàng nội thành: thời gian giao từ <strong>60 - 120 phút</strong> kể từ khi xác nhận.</li>
+                            <li class="list-group-item">Đơn đặt trước: khách hàng có thể chọn khung giờ giao cụ thể khi đặt hàng.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <i class="fas fa-dollar-sign"></i> 3. Phí giao hàng
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Miễn phí giao nội thành cho đơn hàng từ <strong>300.000đ</strong> trở lên.</li>
+                            <li class="list-group-item">Đơn hàng dưới mức này sẽ tính phí giao hàng tùy khu vực (dao động từ 30.000đ - 50.000đ).</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 mb-4">
+                <div class="card shadow-sm">
+                    <div class="card-header">
+                        <i class="fas fa-box-open"></i> 4. Giao hàng và bảo quản
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Sản phẩm bánh và đồ ăn cần được nhận ngay khi giao để đảm bảo chất lượng.</li>
+                            <li class="list-group-item">Nếu đơn hàng bị hư hỏng, sai sản phẩm, vui lòng chụp hình và liên hệ ngay để được hỗ trợ.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="card shadow-sm border-warning"> <div class="card-header text-warning"> <i class="fas fa-exclamation-triangle"></i> 5. Hủy hoặc thay đổi đơn hàng
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item">Khách hàng có thể hủy/chỉnh sửa đơn hàng trong vòng <strong>10 phút</strong> sau khi đặt.</li>
+                            <li class="list-group-item">Sau thời gian này, đơn hàng có thể đã được chế biến nên không thể hủy.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="card shadow-sm support-card">
+                    <div class="card-header">
+                        <i class="fas fa-headset"></i> 6. Liên hệ hỗ trợ
+                    </div>
+                    <div class="card-body">
+                        <p class="text-secondary">Trong trường hợp giao hàng trễ, thiếu sản phẩm hoặc có vấn đề khác, vui lòng liên hệ:</p>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><i class="fas fa-phone-alt text-primary"></i> Hotline: <strong>028.8888.3388</strong></li>
+                            <li class="list-group-item"><i class="fas fa-envelope text-primary"></i> Email: <strong>sweetiecake@gmail.com</strong></li>
+                            <li class="list-group-item"><i class="fas fa-link text-primary"></i> Hoặc truy cập mục <a href="lienhe.html">Liên hệ</a> để gửi phản hồi trực tuyến.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Fade-in effect for the body on load
+        document.body.classList.add('loaded');
+    });
+</script>
+</body>
+</html>
