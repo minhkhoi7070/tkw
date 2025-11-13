@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gợi ý 20+ mẫu bánh sinh nhật cho mẹ - Sweetie Cake</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <link rel="stylesheet" href="/Home Page/css/HomePage.css">
+
+    <style>
+        /* Kích hoạt cuộn mượt khi nhấn vào mục lục */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f8f9fa; /* Màu nền xám nhạt */
+            color: #343a40; 
+            opacity: 0; 
+            transition: opacity 0.8s ease-in-out; 
+            /* Thêm padding-top để nội dung không bị header che */
+            padding-top: 80px; 
+        }
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Bố cục bài viết */
+        .blog-post-section {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* Thẻ chứa bài viết */
+        .article-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Tiêu đề bài viết */
+        .article-card h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        /* Tiêu đề phụ (H2, H3) */
+        .article-card h2, .article-card h3 {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            scroll-margin-top: 100px; /* Bù trừ cho header khi cuộn */
+        }
+        .article-card h2 { font-size: 1.75rem; }
+        .article-card h3 { font-size: 1.4rem; }
+        
+        /* Hình ảnh trong bài */
+        .article-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        /* Thông tin meta (Ngày đăng) */
+        .blog-post-meta {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Đoạn mô tả đầu bài (quote) */
+        .lead-quote {
+            background-color: #f8f9fa;
+            border-left: 5px solid #c9a961;
+            padding: 1.5rem;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Căn lề cho danh sách */
+        .article-card ul {
+            padding-left: 20px;
+        }
+
+        /* Mục lục (Sidebar) */
+        .sidebar-sticky {
+            position: sticky;
+            top: 100px; /* 80px header + 20px lề */
+        }
+        
+        .toc-card .card-header {
+            font-weight: 600;
+            color: #007bff;
+        }
+        
+        /* Tùy chỉnh danh sách mục lục */
+        .toc-list {
+            padding-left: 0;
+            list-style: none;
+        }
+        .toc-list > li > a {
+            font-weight: 500;
+            color: #343a40;
+            padding: 5px 0;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .toc-list > li > a:hover {
+            color: #007bff;
+            transform: translateX(3px);
+        }
+        /* Cấp con (H3) */
+        .toc-list .toc-child {
+            padding-left: 20px;
+            list-style: none;
+        }
+        .toc-list .toc-child a {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #6c757d;
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />  
+<script src="/JavaScript/global.js"></script>
+</head>
+<body class="loaded">
+<header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                    <img src="../imgs/logo.png" alt="Logo Sweetie Cake">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/entrement.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu active" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+<main class="blog-post-section py-5">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-8">
+                <div class="card article-card">
+                    <div class="card-body p-4 p-md-5">
+                        
+                        <h1>Gợi ý 20+ mẫu bánh sinh nhật cho mẹ yêu đơn giản, ý nghĩa</h1>
+                        
+                        <div class="blog-post-meta">
+                            Đăng bởi <strong>Admin</strong> vào ngày 3 tháng 11, 2025
+                        </div>
+                        
+                        <img src="imgs/h50.jpeg" alt="Bìa bài viết" class="img-fluid rounded mb-4">
+
+                        <p class="lead text-muted mb-4 lead-quote">
+                            Mẹ là người phụ nữ đặc biệt trong cuộc đời chúng ta và ngày sinh nhật của mẹ là dịp để thể hiện tình yêu dành cho người phụ nữ tuyệt vời này...
+                        </p>
+
+                        <h2 id="muc-1">Bánh Mousse – Dòng bánh gắn liền với thương hiệu Sweetie Cake</h2>
+                        <p class="lead text-muted mb-4">
+                            Là dòng bánh gắn liền với tên tuổi của Sweetie Cake, nhờ hương vị thanh mát từ những trái cây tươi cao cấp, nhiều bạn đã tin tưởng và lựa chọn các mẫu bánh mousse để làm bánh sinh nhật tặng mẹ yêu trong dịp quan trọng này.
+                        </p>
+                        <p class="lead text-muted mb-4">
+                            Mousse là một loại bánh đa dạng về mẫu mã và hương vị tại Sweetie Cake. Mỗi chiếc bánh được làm theo công thức độc quyền để mang lại hương vị tuyệt hảo và trình diễn sự đẹp mắt, phù hợp với sở thích của đa số khách hàng.
+                        </p>
+                        <p class="lead text-muted mb-4">
+                            Đặc biệt, dòng bánh Mousse được trang trí bằng trái cây tươi cao cấp, tuân thủ theo mùa vụ để mang đến cho khách hàng hương vị tươi ngon và chất lượng tuyệt hảo. Cùng tìm hiểu các mẫu bánh sinh nhật đẹp cho nữ sau:
+                        </p>
+
+                        <h3 id="muc-1-1">Green Bliss – Mousse Bơ</h3>
+                        <img src="imgs/h51.jpeg" alt="Green Bliss – Mousse Bơ" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-1-2">Tropical Vibes Mousse – Mousse Ổi hồng & Chanh dây</h3>
+                        <img src="imgs/h52.jpeg" alt="Mousse Ổi hồng & Chanh dây" class="img-fluid rounded mb-4">
+
+                        <h2 id="muc-2">Bánh Entremet – Sự kết hợp hài hòa các tầng hương vị</h2>
+                        <p class="lead text-muted mb-4">
+                            Là dòng bánh được biết đến bởi sự tinh tế từ công đoạn sản xuất và được khoác lên mình vẻ ngoài kiêu sa, sang trọng, chúng mình tin rằng một chiếc bánh Entremet sẽ là ứng cử viên phù hợp cho bánh sinh nhật cho mẹ hiện đại trong bữa tiệc này.
+                        </p>
+                        <p class="lead text-muted mb-4">
+                            Dòng bánh Entremet được làm từ nhiều tầng lớp có vị tinh tế, đem lại sự quen thuộc thông qua lớp mousse mềm mịn và đồng thời tạo điểm nhấn độc đáo về hương vị và trang trí tỉ mỉ...
+                        </p>
+                        <p class="lead text-muted mb-4">
+                            Trong quá trình sáng tạo nên chiếc bánh Entremet, Sweetie Cake mong muốn mang đến cho khách hàng những trải nghiệm đẳng cấp với một chiếc bánh đẹp mắt, ngon miệng và chất lượng 5 sao...
+                        </p>
+
+                        <h3 id="muc-2-1">Mango Plum – Entremet Thanh Trà</h3>
+                        <img src="imgs/h53.jpeg" alt="Entremet Thanh Trà" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-2-2">Chéri Lady – Entremet Cherry</h3>
+                        <img src="imgs/h54.jpeg" alt="Entremet Cherry" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-2-3">My Muse – Entremet Ôlong Vải Hoa Hồng</h3>
+                        <img src="imgs/h55.jpeg" alt="Entremet Ôlong Vải Hoa Hồng" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-2-4">KoKo Mango – Entremet Xôi Xoài</h3>
+                        <img src="imgs/h56.jpeg" alt="Entremet Xôi Xoài" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-2-5">Coco Green – Entremet Cốm</h3>
+                        <img src="imgs/h57.jpeg" alt="Entremet Cốm" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-2-6">Summer Wine – Entremet Anh Đào</h3>
+                        <img src="imgs/h58.jpeg" alt="Entremet Anh Đào" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-2-7">Rose Mangosteen – Entremet Măng Cụt (màu Hồng)</h3>
+                        <img src="imgs/h59.jpeg" alt="Entremet Măng Cụt" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-2-8">Noire Mangosteen – Entremet Măng Cụt (màu Nâu)</h3>
+                        <img src="imgs/h551.jpeg" alt="Entremet Măng Cụt" class="img-fluid rounded mb-4">
+
+This is a simplified multi-line code block.
+                        <h3 id="muc-2-9">Star Summer – Entremet Hạ Khế</h3>
+                        <img src="imgs/h552.jpeg" alt="Entremet Hạ Khế" class="img-fluid rounded mb-4">
+                        
+                        <h2 id="muc-3">Ưu đãi độc quyền chỉ có tại Sweetie Cake</h2>
+                        <p class="lead text-muted mb-4">
+                            Hơn 8 năm có mặt trên thị trường và được ưa chuộng bởi sự đặc trưng bánh ít ngọt, Sweetie Cake hoạt động với tiêu chí luôn đặt trải nghiệm của khách hàng trên lợi nhuận của công ty:
+                        </p>
+                        <ul class="lead text-muted mb-4">
+                            <li>Giao hàng phủ khắp Thành phố Hồ Chí Minh (Chi tiết liên hệ Fanpage Sweetie Cake để được tư vấn cụ thể).</li>
+                            <li>Có hoá đơn mua hàng và xuất hoá đơn điện tử nếu khách hàng yêu cầu</li>
+                            <li>Tặng kèm 01 dao, 10 bộ muỗng và dĩa, 10 nến nhỏ và có nến số (nếu bạn có yêu cầu).</li>
+                            <li>Bánh sẽ được đổi miễn phí nếu xảy ra hư hỏng trong quá trình giao hàng.</li>
+                        </ul>
+                        <p class_=("lead text-muted mb-2")><strong>Đặc biệt:</strong></p>
+                        <ul class="lead text-muted mb-4">
+                            <li>Bánh kem được làm theo công thức bánh ít ngọt.</li>
+                            <li>Trái cây trang trí trên mỗi bánh đều được nhập mới và tươi mỗi ngày.</li>
+                            <li>Nguyên liệu dùng để làm bánh phải là nguyên liệu được nhập chính hãng, kiểm tra nguồn gốc rõ ràng.</li>
+                            <li>Không sử dụng chất bảo quản hay bất kỳ chất phụ gia nào.</li>
+                            <li>Để bánh được tươi và giữ trọn hương vị, tiệm chỉ làm khi có đơn đặt hàng từ khách.</li>
+                        </ul>
+                        
+                    </div>
+                </div>
+            </div> <div class="col-lg-4">
+                <div class="sidebar-sticky">
+                    <div class="card shadow-sm border-0 toc-card">
+                        <div class="card-header">
+                            <i class="fas fa-list-ul mr-2"></i>Mục lục bài viết
+                        </div>
+                        <div class="card-body">
+                            <ul class="toc-list">
+                                <li>
+                                    <a href="#muc-1">Bánh Mousse</a>
+                                    <ul class="toc-child">
+                                        <li><a href="#muc-1-1">Mousse Bơ</a></li>
+                                        <li><a href="#muc-1-2">Mousse Ổi hồng</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#muc-2">Bánh Entremet</a>
+                                    <ul class="toc-child">
+                                        <li><a href="#muc-2-1">Entremet Thanh Trà</a></li>
+                                        <li><a href="#muc-2-2">Entremet Cherry</a></li>
+                                        <li><a href="#muc-2-3">Entremet Ôlong Vải</a></li>
+                                        <li><a href="#muc-2-4">Entremet Xôi Xoài</a></li>
+                                        <li><a href="#muc-2-5">Entremet Cốm</a></li>
+                                        <li><a href="#muc-2-6">Entremet Anh Đào</a></li>
+                                        <li><a href="#muc-2-7">Entremet Măng Cụt (Hồng)</a></li>
+                                        <li><a href="#muc-2-8">Entremet Măng Cụt (Nâu)</a></li>
+                                        <li><a href="#muc-2-9">Entremet Hạ Khế</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#muc-3">Ưu đãi độc quyền</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> </div>
+    </div>
+</main>
+<div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script>
+    // Script fade-in khi tải trang
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('loaded');
+    });
+
+    // (Đã xóa script carousel không cần thiết)
+</script>
+</body>
+</html>

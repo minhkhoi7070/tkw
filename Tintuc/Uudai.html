@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ưu Đãi - Sweetie Cake</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="/Home Page/css/HomePage.css">
+
+    <style>
+        body {
+            background-color: #f8f9fa; /* Màu nền xám nhạt */
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            opacity: 0; 
+            transition: opacity 0.8s ease-in-out;
+        }
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Thanh Filter */
+        .filter-bar {
+            background-color: #ffffff;
+            border-bottom: 1px solid #e0e0e0;
+            padding: 0.75rem 0;
+        }
+        .filter-bar .dropdown-toggle {
+            color: #c9a961; /* Màu vàng cam chủ đạo */
+            font-weight: 500;
+        }
+        .filter-bar .dropdown-toggle:hover {
+            color: #a98a4f;
+            text-decoration: none;
+        }
+        .filter-bar .dropdown-menu {
+            border-radius: 0;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .filter-bar .btn-link-reset {
+            color: #c9a961;
+            font-weight: 500;
+        }
+        .filter-bar .btn-link-reset:hover {
+            color: #a98a4f;
+        }
+
+        /* Thẻ Nội dung (Content Card) */
+        .content-card {
+            border: none;
+            border-radius: 8px; /* Bo góc */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%; /* Đảm bảo thẻ cao bằng nhau */
+        }
+        .content-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        /* Hình ảnh */
+        .content-card-img {
+            height: 200px; /* Chiều cao cố định */
+            object-fit: cover; /* Cắt ảnh vừa vặn */
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+        }
+
+        /* Thân thẻ (giúp "Read more" luôn ở đáy) */
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Tiêu đề */
+        .content-card-title {
+            font-size: 1.25rem; /* Kích thước hợp lý */
+            font-weight: 600;
+            color: #333;
+            /* Giới hạn 3 dòng chữ */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            min-height: 50px; 
+        }
+
+        /* Đoạn mô tả */
+        .content-card-text {
+            font-size: 0.95rem;
+            color: #666;
+            /* Giới hạn 3 dòng */
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        /* Nút "Read more" */
+        .read-more-link {
+            margin-top: auto; /* !! Quan trọng: Đẩy nút này xuống đáy card */
+            padding-top: 1rem;
+            font-weight: 600;
+            color: #c9a961;
+        }
+        .read-more-link:hover {
+            color: #a98a4f;
+            text-decoration: none;
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />  
+<script src="/JavaScript/global.js"></script>
+</head>
+<body class="loaded">
+<header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                    <img src="../Tintuc/imgs/logo.png" alt="Logo Sweetie Cake">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/entrement.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu active" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+<main>
+    <div class="filter-bar">
+        <div class="container">
+            
+            <div class="d-flex justify-content-between align-items-center flex-wrap">
+                <div class="d-flex align-items-center">
+                    <span class="text-muted mr-3">Filter by</span>
+                    
+                    <div class="dropdown mr-3">
+                        <a class="btn btn-link dropdown-toggle p-0" href="#" role="button" id="filterCategories" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-list mr-1"></i>Categories
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="filterCategories">
+                            <a class="dropdown-item" href="javascript:applyFilter('Categories', 'Tin tức')">Tin tức</a>
+                            <a class="dropdown-item" href="javascript:applyFilter('Categories', 'Khuyến mãi')">Khuyến mãi</a>
+                            <a class="dropdown-item" href="javascript:applyFilter('Categories', 'Công thức')">Công thức</a>
+                        </div>
+                    </div>
+                    
+                    <div class="dropdown mr-3">
+                        <a class="btn btn-link dropdown-toggle p-0" href="#" role="button" id="filterTags" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-tag mr-1"></i>Tags
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="filterTags">
+                            <a class="dropdown-item" href="javascript:applyFilter('Tags', 'Trung Thu')">Trung Thu</a>
+                            <a class="dropdown-item" href="javascript:applyFilter('Tags', 'Sinh Nhật')">Sinh Nhật</a>
+                            <a class="dropdown-item" href="javascript:applyFilter('Tags', 'Sweetin')">Sweetin</a>
+                        </div>
+                    </div>
+
+                    <div class="dropdown">
+                        <a class="btn btn-link dropdown-toggle p-0" href="#" role="button" id="filterAuthors" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user mr-1"></i>Authors
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="filterAuthors">
+                            <a class="dropdown-item" href="javascript:applyFilter('Authors', 'Admin')">Admin</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="btn btn-link-reset p-0" onclick="showAll()">
+                    <i class="fas fa-times mr-1"></i>Show all
+                </button>
+            </div>
+            </a>
+        </div>
+    </div>
+
+    <section class="py-5">
+        <div class="container">
+            
+            <h2 id="blog-title" class="mb-4 font-weight-light">Ưu đãi nổi bật</h2>
+
+            <div id="dealsSection">
+                <div class="row justify-content-center">
+                
+                    <div class="col-md-6 col-lg-4 mb-4">
+                        <a  href="/Tintuc/BT_nhom/baiviet7.html" >
+                        <div class="card content-card"> <img src="/Tintuc/imgs/Screen Shot 2025-10-27 at 16.05.41.png" class="card-img-top content-card-img" alt="Voucher 20%">
+                          </a>
+                            <div class="card-body">
+                                <h5 class="card-title content-card-title">TẶNG VOUCHER 20% CHO KHÁCH HÀNG QUAN TÂM ZALO OA</h5>
+                                <p class="card-text text-muted content-card-text">Từ 14/10/2024, Khách hàng khi ấn "Quan tâm" Zalo OA Sweetie Cake sẽ nhận được Mã Voucher giảm giá 20%.</p>
+                                <a href="/Tintuc/BT_nhom/baiviet7.html" class="text-warning read-more-link">
+                                    <i class="far fa-file-alt mr-1"></i>Read more
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+            </div>
+        </div>
+    </section>
+    
+    </main>
+
+ <div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script>
+    // --- TƯƠNG TÁC THANH FILTER ---
+    
+    const filterCategories = document.getElementById('filterCategories');
+    const filterTags = document.getElementById('filterTags');
+    const filterAuthors = document.getElementById('filterAuthors');
+    const blogTitle = document.getElementById('blog-title');
+
+    /**
+     * Áp dụng bộ lọc khi click
+     */
+    function applyFilter(type, value) {
+        console.log(`Applying filter: ${type} = ${value}`);
+        
+        // Cập nhật tiêu đề trang
+        blogTitle.innerText = `Ưu đãi theo ${type}: "${value}"`;
+
+        // Cập nhật text của nút dropdown
+        if (type === 'Categories') {
+            filterCategories.innerHTML = `<i class="fas fa-list mr-1"></i>${type}: ${value}`;
+        } else if (type === 'Tags') {
+            filterTags.innerHTML = `<i class="fas fa-tag mr-1"></i>${type}: ${value}`;
+        } else if (type === 'Authors') {
+            filterAuthors.innerHTML = `<i class="fas fa-user mr-1"></i>${type}: ${value}`;
+        }
+        
+        // (Trong ứng dụng thật, bạn sẽ lọc các thẻ ưu đãi tại đây)
+    }
+
+    
+    function showAll() {
+        console.log('Showing all deals');
+        
+        // Reset tiêu đề
+        blogTitle.innerText = 'Ưu đãi nổi bật';
+
+        // Reset text các nút
+        filterCategories.innerHTML = '<i class="fas fa-list mr-1"></i>Categories';
+        filterTags.innerHTML = '<i class="fas fa-tag mr-1"></i>Tags';
+        filterAuthors.innerHTML = '<i class="fas fa-user mr-1"></i>Authors';
+        
+        // (Tải lại tất cả ưu đãi)
+    }
+    
+    // Script fade-in khi tải trang
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('loaded');
+    });
+
+</script>
+    
+</body>
+</html>

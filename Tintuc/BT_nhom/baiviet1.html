@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bộ sưu tập set bánh Trung Thu - Sweetie Cake</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <link rel="stylesheet" href="/Home Page/css/HomePage.css">
+
+    <style>
+        /* Kích hoạt cuộn mượt khi nhấn vào mục lục */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f8f9fa; /* Màu nền xám nhạt */
+            color: #343a40; 
+            opacity: 0; 
+            transition: opacity 0.8s ease-in-out; 
+            /* Thêm padding-top để nội dung không bị header che */
+            padding-top: 80px; 
+        }
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Tùy chỉnh Header (ghi đè file HomePage.css nếu cần) */
+        /* .navbar-custom { ... } */
+
+        /* Bố cục bài viết */
+        .blog-post-section {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* Thẻ chứa bài viết */
+        .article-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Tiêu đề bài viết */
+        .article-card h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        /* Tiêu đề phụ (H2, H3) */
+        .article-card h2, .article-card h3 {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            scroll-margin-top: 100px; /* Bù trừ cho header khi cuộn */
+        }
+        .article-card h2 { font-size: 1.75rem; }
+        .article-card h3 { font-size: 1.4rem; }
+        
+        /* Hình ảnh trong bài */
+        .article-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        /* Thông tin meta (Ngày đăng) */
+        .blog-post-meta {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Đoạn mô tả đầu bài (quote) */
+        .lead-quote {
+            background-color: #f8f9fa;
+            border-left: 5px solid #c9a961;
+            padding: 1.5rem;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Mục lục (Sidebar) */
+        .sidebar-sticky {
+            position: sticky;
+            top: 100px; /* 80px header + 20px lề */
+        }
+        
+        .toc-card .card-header {
+            font-weight: 600;
+            color: #007bff;
+        }
+        
+        /* Tùy chỉnh danh sách mục lục */
+        .toc-list {
+            padding-left: 0;
+            list-style: none;
+        }
+        .toc-list > li > a {
+            font-weight: 500;
+            color: #343a40;
+            padding: 5px 0;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .toc-list > li > a:hover {
+            color: #007bff;
+            transform: translateX(3px);
+        }
+        /* Cấp con (H3) */
+        .toc-list .toc-child {
+            padding-left: 20px;
+            list-style: none;
+        }
+        .toc-list .toc-child a {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #6c757d;
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />  
+<script src="/JavaScript/global.js"></script>
+</head>
+<body class="loaded">
+<header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                    <img src="../imgs/logo.png" alt="Logo Sweetie Cake">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/entrement.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu active" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+<main class="blog-post-section py-5">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-8">
+                <div class="card article-card">
+                    <div class="card-body p-4 p-md-5">
+                        
+                        <h1>"Bộ sưu tập" set bánh Trung Thu "Trăng Viên Mãn, Thu Thịnh Vượng" từ Sweetie Cake</h1>
+                        
+                        <div class="blog-post-meta">
+                            Đăng bởi <strong>Admin</strong> vào ngày 3 tháng 11, 2025
+                        </div>
+                        
+                        <img src="imgs/h1.png" alt="Bìa bài viết" class="img-fluid rounded mb-4">
+
+                        <p class="lead text-muted mb-4 lead-quote">
+                            Mùa Trung Thu năm nay, Sweetie Cake hân hạnh giới thiệu bộ sưu tập bánh Trung Thu đặc biệt mang tên 
+                            “Trăng Viên Mãn, Thu Thịnh Vượng”. Mỗi hộp quà là sự kết hợp hoàn hảo giữa hương vị truyền thống và sự 
+                            sáng tạo độc đáo, hứa hẹn mang đến một mùa Trung Thu trọn vẹn và ý nghĩa cho mọi gia đình.
+                        </p>
+
+                        <h2 id="muc-1">Nghệ thuật chế tác hộp quà Trung Thu độc đáo</h2>
+                        <p class="lead text-muted mb-4">
+                            Bộ hộp quà Trung Thu của Sweetie Cake năm nay là một điểm nhấn ấn tượng.
+                            Lấy cảm hứng từ những câu chuyện mùa vụ trên khắp miền đất nước, Sweetie Cake đã tạo ra những chiếc
+                            bánh Trung Thu thủ công, từ những nông sản Việt gần gũi và quý giá: mãng cầu, vải, khế, dừa, cà phê,… 
+                            Bên cạnh những chiếc bánh, hộp bánh Trung thu năm nay cũng được tạo nên từ những nét vẽ tỉ mỉ, tinh xảo
+                            để mang đến cho khách hàng một “bức tranh” mùa vụ Việt Nam sống động và ý nghĩa nhất.
+                        </p>
+
+                        <h2 id="muc-2">Bộ sưu tập “Trăng Viên Mãn, Thu Thịnh Vượng”: Sự lựa chọn đa dạng</h2>
+                        <p class="lead text-muted mb-4">
+                            Bộ sưu tập “Trăng Viên Mãn, Thu Thịnh Vượng” của Sweetie Cake được thiết kế 
+                            đa dạng, đáp ứng mọi nhu cầu và sở thích của khách hàng, từ những hộp quà cao cấp sang trọng đến những 
+                            túi bánh tiện lợi, phù hợp cho nhiều mục đích sử dụng khác nhau.
+                        </p>
+                        <img src="imgs/h2.png" alt="Bộ sưu tập" class="img-fluid rounded mb-4">
+                        
+                        <h2 id="muc-3">Hộp quà cao cấp: Thịnh Vượng và Viên Mãn</h2>
+                        <p class="lead text-muted mb-4">
+                            Trong phân khúc cao cấp, Sweetie Cake mang đến hai lựa chọn nổi bật, thể 
+                            hiện sự tinh tế và đẳng cấp trong từng thiết kế:
+                        </p>
+
+                        <h3 id="muc-3-1">Hộp Thịnh Vượng</h3>
+                        <p class="lead text-muted mb-4">
+                            Đây là thiết kế dạng ngăn kéo 3 tầng sang trọng, mang đến trải nghiệm khám 
+                            phá độc đáo. Điểm nhấn đặc biệt của Hộp Thịnh Vượng nằm ở nắp hộp được tạo hình popup giấy nhiều lớp. 
+                            Sự phức tạp trong cấu trúc này đòi hỏi tính toán cực kỳ chính xác để khi mở lên, bức tranh mùa vụ hiện 
+                            ra trọn vẹn và sống động, thể hiện sự tâm huyết và công phu của đội ngũ thiết kế và người thợ chế tác.
+                        </p>
+                        <img src="imgs/h5.png" alt="Hộp Thịnh Vượng" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-3-2">Hộp Viên Mãn</h3>
+                        <p class="lead text-muted mb-4">
+                            Với thiết kế hộp tiện lợi, Hộp Viên Mãn tập trung vào sự gần gũi nhưng vẫn giữ 
+                            được nét chỉn chu và tinh tế. Bề mặt hộp được tạo hiệu ứng paper-cut 3D thủ công, tái hiện khung cảnh mùa vụ 
+                            và hội làng Trung Thu một cách sinh động. Sự khéo léo trong từng đường cắt, từng lớp giấy tạo nên một bức tranh 
+                            nổi bật, mang đến cảm giác ấm áp, thân thuộc, biểu trưng cho sự đoàn viên, sum vầy trong đêm trăng rằm.
+                        </p>
+                        <img src="imgs/h3.png" alt="Hộp Viên Mãn" class="img-fluid rounded mb-4">
+
+                        <h2 id="muc-4">Hộp phổ thông: Trăng Hội, Trăng Hòa, Trăng Yên</h2>
+                        <p class="lead text-muted mb-4">
+                            Các hộp phổ thông của Sweetie Cake là sự kết hợp hài hòa giữa chất lượng 
+                            và giá trị, phù hợp cho nhiều đối tượng khách hàng:
+                        </p>
+
+                        <h3 id="muc-4-1">Trăng Hội</h3>
+                        <p class="lead text-muted mb-4">
+                            Hộp Trăng Hội gồm 4 chiếc bánh trung thu 150g với các hương vị được yêu thích: 
+                            Nấm Truffle Thượng Hạng, Bò Sốt Tiêu Đen, Khế Bưởi Quế Hoa và Vải Hồng Cánh Sen. Kèm theo đó là trà ô long 
+                            thơm dịu, tạo nên một set quà Trung Thu trọn vẹn – lý tưởng để cùng thưởng thức bên gia đình và người thân 
+                            trong đêm trăng rằm.
+                        </p>
+
+                        <h3 id="muc-4-2">Trăng Hòa</h3>
+                        <p class="lead text-muted mb-4">
+                            Hộp Trăng Hòa cũng gồm 4 bánh 150g, mang đến trải nghiệm ẩm thực độc đáo và 
+                            mới lạ. Các hương vị gồm: Nấm Truffle Thượng Hạng, Tomyum Hải Sản Đặc Biệt, Mãng Cầu Xiêm Sen và Sữa Dừa 
+                            Cà Phê. Kết hợp cùng trà ô long thanh nhẹ, đây là món quà tuyệt vời dành cho những ai muốn khám phá những 
+                            vị bánh trung thu sáng tạo, đầy cảm hứng.
+                        </p>
+
+                        <h3 id="muc-4-3">Trăng Yên</h3>
+                        <p class="lead text-muted mb-4">
+                            Trăng Yên là hộp bánh trung thu kết hợp đa dạng cả về kích thước và hương vị. 
+                            Bộ quà gồm 2 bánh 150g (Nấm Truffle Thượng Hạng, Bò Sốt Tiêu Đen) và 4 bánh 60g (Khế Bưởi Quế Hoa, Sen Vàng 
+                            Xoài Dẻo, Vải Hồng Cánh Sen, Sữa Dừa Cà Phê), kèm trà ô long.
+                        </p>
+                        
+                        <h2 id="muc-5">Túi 2 bánh tiện lợi: Như Ý và Nguyệt Slay</h2>
+                        <p class="lead text-muted mb-4">
+                            Để đáp ứng nhu cầu biếu tặng nhỏ gọn hoặc thưởng thức cá nhân, Sweetie Cake còn có 
+                            các túi 2 bánh với thiết kế hiện đại và tiện dụng:
+                        </p>
+
+                        <h3 id="muc-5-1">Túi 2 bánh Như Ý</h3>
+                        <p class="lead text-muted mb-4">
+                            Thiết kế nhỏ gọn, hiện đại và tiện dụng, Túi Như Ý là lựa chọn hoàn hảo cho những 
+                            ai muốn trao gửi món quà ý nghĩa mà không quá cầu kỳ. Chất liệu giấy cứng cáp, với từng mặt túi in hình lát cắt 
+                            mùa vụ tươi sáng, mang đến cảm giác trang nhã và thanh lịch.
+                        </p>
+                        <img src="imgs/h4.png" alt="Túi 2 bánh" class="img-fluid rounded mb-4">
+
+                        <h3 id="muc-5-2">Nguyệt Slay (Túi 2 bánh size nhỏ)</h3>
+                        <p class="lead text-muted mb-4">
+                            Dành cho những ai yêu thích sự linh hoạt, Nguyệt Slay cho phép bạn “custom” món quà 
+                            của mình. Bạn có thể chọn 1 trong 6 màu túi yêu thích và kết hợp với 2 trong 5 loại bánh size 60g độc đáo: Mãng 
+                            Cầu Xiêm Sen, Sữa Dừa Cà Phê, Sen Vàng Xoài Dẻo, Khế Bưởi Quế Hoa, Vải Hồng Cánh Sen. 
+                            ...
+                        </p>
+
+                        <p class="lead text-muted mb-4 font-italic">
+                            Bộ sưu tập bánh Trung Thu “Trăng Viên Mãn, Thu Thịnh Vượng” của 
+                            Sweetie Cake là sự hòa quyện tinh tế giữa nghệ thuật, truyền thống và hương vị độc đáo. 
+                            ...
+                            Hãy để Sweetie Cake cùng bạn tạo nên một mùa Trung Thu thật viên mãn và thịnh vượng!
+                        </p>
+
+                    </div>
+                </div>
+            </div> <div class="col-lg-4">
+                <div class="sidebar-sticky">
+                    <div class="card shadow-sm border-0 toc-card">
+                        <div class="card-header">
+                            <i class="fas fa-list-ul mr-2"></i>Mục lục bài viết
+                        </div>
+                        <div class="card-body">
+                            <ul class="toc-list">
+                                <li><a href="#muc-1">Nghệ thuật chế tác</a></li>
+                                <li><a href="#muc-2">Sự lựa chọn đa dạng</a></li>
+                                <li>
+                                    <a href="#muc-3">Hộp quà cao cấp</a>
+                                    <ul class="toc-child">
+                                        <li><a href="#muc-3-1">Hộp Thịnh Vượng</a></li>
+                                        <li><a href="#muc-3-2">Hộp Viên Mãn</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#muc-4">Hộp phổ thông</a>
+                                    <ul class="toc-child">
+                                        <li><a href="#muc-4-1">Trăng Hội</a></li>
+                                        <li><a href="#muc-4-2">Trăng Hòa</a></li>
+                                        <li><a href="#muc-4-3">Trăng Yên</a></li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="#muc-5">Túi 2 bánh tiện lợi</a>
+                                    <ul class="toc-child">
+                                        <li><a href="#muc-5-1">Túi Như Ý</a></li>
+                                        <li><a href="#muc-5-2">Nguyệt Slay</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> </div>
+    </div>
+</main>
+    
+<div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script>
+    // Script fade-in khi tải trang
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('loaded');
+    });
+
+    // (Đã xóa script carousel không cần thiết)
+</script>
+</body>
+</html>

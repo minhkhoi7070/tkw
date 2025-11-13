@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Dream Cake - Sweetin - Sweetie Cake</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+    <link rel="stylesheet" href="/Home Page/css/HomePage.css">
+
+    <style>
+        /* Kích hoạt cuộn mượt khi nhấn vào mục lục */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background-color: #f8f9fa; /* Màu nền xám nhạt */
+            color: #343a40; 
+            opacity: 0; 
+            transition: opacity 0.8s ease-in-out; 
+            /* Thêm padding-top để nội dung không bị header che */
+            padding-top: 80px; 
+        }
+        body.loaded {
+            opacity: 1;
+        }
+
+        /* Bố cục bài viết */
+        .blog-post-section {
+            font-size: 1.1rem;
+            line-height: 1.7;
+        }
+
+        /* Thẻ chứa bài viết */
+        .article-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        /* Tiêu đề bài viết */
+        .article-card h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+        }
+        
+        /* Tiêu đề phụ (H2, H3) */
+        .article-card h2, .article-card h3 {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            scroll-margin-top: 100px; /* Bù trừ cho header khi cuộn */
+        }
+        .article-card h2 { font-size: 1.75rem; }
+        .article-card h3 { font-size: 1.4rem; }
+        
+        /* Hình ảnh trong bài */
+        .article-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        /* Thông tin meta (Ngày đăng) */
+        .blog-post-meta {
+            color: #6c757d;
+            margin-bottom: 1.5rem;
+        }
+        
+        /* Đoạn mô tả đầu bài (quote) */
+        .lead-quote {
+            background-color: #f8f9fa;
+            border-left: 5px solid #c9a961;
+            padding: 1.5rem;
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+
+        /* Mục lục (Sidebar) */
+        .sidebar-sticky {
+            position: sticky;
+            top: 100px; /* 80px header + 20px lề */
+        }
+        
+        .toc-card .card-header {
+            font-weight: 600;
+            color: #007bff;
+        }
+        
+        /* Tùy chỉnh danh sách mục lục */
+        .toc-list {
+            padding-left: 0;
+            list-style: none;
+        }
+        .toc-list > li > a {
+            font-weight: 500;
+            color: #343a40;
+            padding: 5px 0;
+            display: block;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .toc-list > li > a:hover {
+            color: #007bff;
+            transform: translateX(3px);
+        }
+    </style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />  
+<script src="/JavaScript/global.js"></script>
+</head>
+<body class="loaded">
+<header class="fixed-top">
+        <nav class="navbar navbar-expand-lg navbar-dark navbar-custom">
+            <div class="container">
+                <a class="navbar-brand" href="/Home Page/src/HomePage.html">
+                     <img src="../imgs/logo.png" alt="Logo Sweetie Cake">
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-menu">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="navbar-nav ml-auto align-items-center">
+
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/Home Page/src/HomePage.html">Trang chủ</a>
+                        </li>
+                        <li class="nav-item dropdown ">
+                            <a class="nav-link dropdown-toggle " href="/Menu bánh/html/Menu.html"  id="navbarDropdownMenuLink"  aria-haspopup="true" aria-expanded="false">
+                                Menu Bánh
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                               
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetbox.html">Sweetbox</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/sweetin.html">Sweetin - Bánh Hộp Thiếc Cao Cấp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/entrement.html">Bánh Entreme</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/mousse.html">Bánh Mousse</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/kembap.html">Bánh Kem Bắp</a>
+                                <a class="dropdown-item" href="/Menu bánh/html/flangato.html">Bánh Flan Gato</a>
+                               
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/khachhang.html">Khách hàng thân thiết</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html">Giao hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html">Liên hệ</a>
+                        </li>
+                        <li class="nav-item ">
+                            <a class="nav-link" href="/4menu/BTap nhóm thiết kế web/btap/cuahang.html">Cửa hàng</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/Menu bánh/GioHang/GioHang.html">Giỏ Hàng</a>
+                        </li>
+                        <li class="nav-item dropdown"> 
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownTinTuc" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Tin tức
+                            </a>
+                            <div class="dropdown-menu active" aria-labelledby="navbarDropdownTinTuc">
+                                <a class="dropdown-item" href="/Tintuc/Blog.html">Blog</a>
+                                <a class="dropdown-item" href="/Tintuc/Uudai.html">Ưu đãi</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown user-menu " id="user-guest-menu"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuGuest" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-user"></i>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuGuest">
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng nhập</a>
+                            <a class="dropdown-item" href="/Home Page/src/login.html">Đăng ký</a>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown user-menu" id="user-member-menu" style="display: none;"> 
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarUserMenuMember" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <strong id="welcome-message">Chào, Bạn!</strong>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarUserMenuMember">
+                            <a class="dropdown-item" href="/Home Page/src/myprofile.html">Tài khoản của tôi</a>
+                            <a class="dropdown-item" href="javascript:logout()">Đăng xuất</a>
+                        </div>
+                    </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    
+<main class="blog-post-section py-5">
+    <div class="container">
+        <div class="row">
+            
+            <div class="col-lg-8">
+                <div class="card article-card">
+                    <div class="card-body p-4 p-md-5">
+                        
+                        <h1>Chocolate Dream Cake – Vị bánh hot nhất trong dòng bánh hộp thiếc cao cấp Sweetin</h1>
+                        
+                        <div class="blog-post-meta">
+                            Đăng bởi <strong>Admin</strong> vào ngày 3 tháng 11, 2025
+                        </div>
+                        
+                        <img src="imgs/h60.jpeg" alt="Bìa bài viết" class="img-fluid rounded mb-4">
+
+                        <p class="lead text-muted mb-4 lead-quote">
+                            Nằm trong dòng bánh hộp thiếc cao cấp mới ra mắt của Sweetie Cake – Sweetin, Chocolate Dream Cake hứa hẹn sẽ làm hài lòng những tín đồ yêu thích chocolate. Với lớp bánh mềm mịn và phủ lớp ganache bóng mượt, mỗi miếng bánh đều là một hành trình đầy cảm xúc...
+                        </p>
+
+                        <h2 id="muc-1">Sự trở lại đầy ấn tượng của Sweetie Cake với bánh hộp thiếc Sweetin “hot trend”</h2>
+                        <p class="lead text-muted mb-4">
+                            Sự trở lại đầy ấn tượng của Sweetie Cake với dòng bánh hộp thiếc cao cấp Sweetin đã thu hút sự chú ý của nhiều tín đồ ẩm thực. Với mong muốn mang đến trải nghiệm vị giác cao cấp nhưng vẫn tiện dụng, Sweetin được giới thiệu với bốn vị bánh đặc trưng...
+                        </p>
+                        <p class="lead text-muted mb-4">
+                            Mỗi vị bánh trong bộ sưu tập Sweetin là kết quả của sự cân chỉnh tỉ mỉ từ nguyên liệu đến công thức, mang đến sự hòa quyện hoàn hảo giữa vị ngọt thanh, kết cấu mềm mịn và hương thơm quyến rũ...
+                        </p>
+                        <img src="imgs/h61.jpeg" alt="Bánh Sweetin" class="img-fluid rounded mb-4">
+
+                        <h2 id="muc-2">Chocolate Dream Cake – Sự hòa quyện tuyệt vời của vị đắng và ngọt</h2>
+                        <p class="lead text-muted mb-4">
+                            Chocolate Dream Cake của Sweetin là một tác phẩm nghệ thuật ẩm thực mới mẻ, mang đến trải nghiệm vị giác tuyệt vời cho những tín đồ yêu thích chocolate. Với cấu trúc 5 lớp độc đáo, bắt đầu bằng lớp bạt bánh chocolate nướng mềm mại...
+                        </p>
+                        <img src="imgs/h62.jpeg" alt="Chocolate Dream Cake" class="img-fluid rounded mb-4">
+                        <p class="lead text-muted mb-4">
+                            Chocolate Dream Cake hiện đang được bày bán tại Sweetie Cake với mức giá 195.000 VNĐ cho phiên bản Classic và 225.000 VNĐ cho phiên bản Delight...
+                        </p>
+                        <p class="lead text-muted mb-4">
+                            Bánh được đựng trong hộp thiếc sang trọng, không chỉ giúp bảo quản hương vị mà còn mang lại cảm giác đẳng cấp cho người thưởng thức...
+                        </p>
+                        <img src="imgs/h63.jpeg" alt="Hộp bánh" class="img-fluid rounded mb-4">
+
+                        <p class="lead text-muted mb-4 font-italic">
+                            Trên đây là các thông tin chi tiết về mẫu Chocolate Dream Cake, một món bánh tráng miệng tuyệt vời dành cho những tín đồ yêu thích chocolate. Với hương vị độc đáo và chất lượng vượt trội, món bánh này chắc chắn sẽ để lại ấn tượng ngọt ngào cho bạn...
+                        </g>
+
+                    </div>
+                </div>
+            </div> <div class="col-lg-4">
+                <div class="sidebar-sticky">
+                    <div class="card shadow-sm border-0 toc-card">
+                        <div class="card-header">
+                            <i class="fas fa-list-ul mr-2"></i>Mục lục bài viết
+                        </div>
+                        <div class="card-body">
+                            <ul class="toc-list">
+                                <li><a href="#muc-1">Sự trở lại của Sweetin</a></li>
+                                <li><a href="#muc-2">Hòa quyện vị đắng và ngọt</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div> </div>
+    </div>
+</main>
+   <div class="floating-contact">
+    <a href="https://www.facebook.com/DhCongThuongHCM" class="float-btn facebook-btn" target="_blank" aria-label="Facebook">
+        <i class="fab fa-facebook-f"></i>
+    </a>
+    <a href="tel:02888883388" class="float-btn phone-btn" aria-label="Gọi điện thoại">
+        <span class="phone-icon-wrapper">
+            <i class="fas fa-phone-alt"></i>
+        </span>
+        <span class="phone-number">028.8888.3388</span>
+    </a>
+</div>
+
+<div class="zalo-float-btn">
+    <a href="https://zalo.me/g/zdxrse918" target="_blank" aria-label="Chat Zalo">
+        <img src="/Home Page/img/7044033_zalo_icon.png" alt="Zalo Icon">
+    </a>
+</div>
+
+
+<footer class="mt-5 pt-5 pb-3" style="background-color: #1e2d40; color: #a9b3c1;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5">
+                <h6 class="text-white">CÔNG TY TNHH SWEETIE CAKE</h6>
+                <p class="small">140 Lê Trọng Tấn, phường Tây Thạnh, Quận Tân Phú, TP.HCM</p>
+                <p class="small">Giấy chứng nhận ĐKKD: 0315630862 do Sở Kế hoạch và Đầu tư TP.HCM cấp lần đầu ngày 16/04/2019.</p>
+            </div>
+            <div class="col-md-4">
+                <h6 class="text-white">CHÍNH SÁCH</h6>
+                <ul class="list-unstyled">
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/giaohang.html" class="small" style="color: #a9b3c1;">Chính sách giao hàng</a></li>
+                    <li><a href="/4menu/BTap nhóm thiết kế web/btap/lienhe.html" class="small" style="color: #a9b3c1;">Thông tin liên hệ</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 text-center">
+                <img src="/Home Page/img/logoSaleNoti.png" alt="Đã Thông Báo Bộ Công Thương" style="width: 150px;">
+            </div>
+        </div>
+        <hr style="border-color: #3a4b60;">
+        <div class="text-center small">
+            <p>&copy; 2025 Sweetie Cake. All Rights Reserved. (Đồ án của nhóm)</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script>
+    // Script fade-in khi tải trang
+    document.addEventListener('DOMContentLoaded', function() {
+        document.body.classList.add('loaded');
+    });
+
+    // (Đã xóa script carousel không cần thiết)
+</script>
+</body>
+</html>
